@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>نذورات حرم حضرت عبدالعظیم حسنی</title>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&family=Lalezar&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    :root {
+      --bg-light: #f7f3ea;
+      --bg-dark: #121212;
+
+      --surface-light: rgba(255, 255, 255, 0.88);
+      --surface-dark: rgba(24, 24, 24, 0.95);
+
+      --text-light: #23312c;
+      --text-dark: #f4ecdf;
+
+      --muted-light: #5f6f68;
+      --muted-dark: #d4c7ad;
+
+      --primary-color: #0f6b5f;
+      --primary-dark: #0a4f47;
+      --accent-color: #c9a227;
+      --accent-dark: #a8841b;
+
+      --border-light: rgba(15, 107, 95, 0.12);
+      --border-dark: rgba(201, 162, 39, 0.18);
+
+      --shadow-light: 0 10px 30px rgba(15, 107, 95, 0.08);
+      --shadow-dark: 0 12px 35px rgba(0, 0, 0, 0.35);
+
+      --hero-gradient: linear-gradient(135deg, #0f6b5f 0%, #0a4f47 50%, #174f55 100%);
+      --card-gradient-light: linear-gradient(180deg, rgba(255,255,255,0.92) 0%, rgba(245,240,229,0.92) 100%);
+      --card-gradient-dark: linear-gradient(180deg, rgba(28,28,28,0.98) 0%, rgba(20,20,20,0.98) 100%);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Vazirmatn', sans-serif;
+      background:
+        radial-gradient(circle at top, rgba(201,162,39,0.08), transparent 30%),
+        radial-gradient(circle at bottom, rgba(15,107,95,0.08), transparent 35%),
+        var(--bg-light);
+      color: var(--text-light);
+      transition: background-color 0.3s ease, color 0.3s ease;
+      overflow-x: hidden;
+    }
+
+    body.dark {
+      background:
+        radial-gradient(circle at top, rgba(201,162,39,0.06), transparent 30%),
+        radial-gradient(circle at bottom, rgba(15,107,95,0.08), transparent 35%),
+        var(--bg-dark);
+      color: var(--text-dark);
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.05;
+      background-image:
+        radial-gradient(circle at 25% 25%, var(--accent-color) 1px, transparent 1px),
+        radial-gradient(circle at 75% 75%, var(--primary-color) 1px, transparent 1px);
+      background-size: 80px 80px;
+      z-index: 0;
+    }
+
+    .app-shell {
+      position: relative;
+      z-index: 1;
+      min-height: 100vh;
+      padding-bottom: 90px;
+    }
+
+    .app-frame {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      padding: 14px 18px;
+      border-radius: 20px;
+      background: var(--surface-light);
+      backdrop-filter: blur(14px);
+      box-shadow: var(--shadow-light);
+      border: 1px solid var(--border-light);
+      margin-bottom: 18px;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+
+    body.dark .topbar {
+      background: var(--surface-dark);
+      box-shadow: var(--shadow-dark);
+      border-color: var(--border-dark);
+    }
+
+    .topbar-logo img {
+      width: 72px;
+      height: 72px;
+      object-fit: contain;
+      display: block;
+    }
+
+    .topbar-title {
+      flex: 1;
+      text-align: right;
+    }
+
+    .topbar-title h1 {
+      font-family: 'Lalezar', cursive;
+      font-size: 1.9rem;
+      color: var(--primary-color);
+      line-height: 1.1;
+    }
+
+    .topbar-title p {
+      font-size: 0.95rem;
+      margin-top: 4px;
+      color: var(--muted-light);
+    }
+
+    body.dark .topbar-title p {
+      color: var(--muted-dark);
+    }
+
+    .topbar-actions .icon-btn {
+      border: none;
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      cursor: pointer;
+      background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+      color: #fff;
+      font-size: 1.1rem;
+      box-shadow: 0 6px 18px rgba(15,107,95,0.22);
+    }
+
+    .search {
+      margin-bottom: 16px;
+    }
+
+    .search-box {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--surface-light);
+      border: 1px solid var(--border-light);
+      border-radius: 18px;
+      padding: 14px 16px;
+      box-shadow: var(--shadow-light);
+    }
+
+    body.dark .search-box {
+      background: var(--surface-dark);
+      border-color: var(--border-dark);
+    }
+
+    .search-box input {
+      width: 100%;
+      border: none;
+      outline: none;
+      background: transparent;
+      font: inherit;
+      color: inherit;
+    }
+
+    .announcement-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, rgba(201,162,39,0.14), rgba(15,107,95,0.10));
+      border: 1px solid rgba(201,162,39,0.18);
+      margin-bottom: 20px;
+      color: inherit;
+    }
+
+    .announcement-close {
+      border: none;
+      background: transparent;
+      font-size: 1.2rem;
+      cursor: pointer;
+      color: inherit;
+    }
+
+    .hero {
+      border-radius: 24px;
+      padding: 34px 24px;
+      margin-bottom: 26px;
+      background: var(--hero-gradient);
+      color: #fff;
+      box-shadow: 0 18px 40px rgba(10,79,71,0.24);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at top right, rgba(255,255,255,0.14), transparent 30%),
+        radial-gradient(circle at bottom left, rgba(255,215,120,0.10), transparent 28%);
+      pointer-events: none;
+    }
+
+    .hero h2 {
+      font-family: 'Lalezar', cursive;
+      font-size: 2rem;
+      margin-bottom: 10px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero p {
+      max-width: 720px;
+      line-height: 1.9;
+      position: relative;
+      z-index: 1;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      text-decoration: none;
+      border: none;
+      border-radius: 14px;
+      padding: 12px 18px;
+      cursor: pointer;
+      font-weight: 700;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+    }
+
+    .btn.primary,
+    .btn.btn-primary {
+      background: linear-gradient(135deg, var(--accent-color), #e0bf4e);
+      color: #2b2410;
+      box-shadow: 0 10px 20px rgba(201,162,39,0.22);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .section {
+      margin-bottom: 28px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+    }
+
+    .section-header h3,
+    .section-header h2 {
+      font-family: 'Lalezar', cursive;
+      color: var(--primary-color);
+      font-size: 1.5rem;
+    }
+
+    .section-header p {
+      color: var(--muted-light);
+      margin-top: 4px;
+    }
+
+    body.dark .section-header p {
+      color: var(--muted-dark);
+    }
+
+    .section-header a {
+      text-decoration: none;
+      color: var(--accent-color);
+      font-weight: 700;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card,
+    .live-stream-card,
+    .media-card {
+      background: var(--card-gradient-light);
+      border: 1px solid var(--border-light);
+      border-radius: 22px;
+      box-shadow: var(--shadow-light);
+      overflow: hidden;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+      position: relative;
+    }
+
+    body.dark .card,
+    body.dark .live-stream-card,
+    body.dark .media-card {
+      background: var(--card-gradient-dark);
+      border-color: var(--border-dark);
+      box-shadow: var(--shadow-dark);
+    }
+
+    .card:hover,
+    .live-stream-card:hover,
+    .media-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 34px rgba(15, 107, 95, 0.16);
+    }
+
+    .card-icon,
+    .media-thumb {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card-icon {
+      padding: 18px 18px 0;
+      color: var(--primary-color);
+    }
+
+    .card-content,
+    .media-content {
+      padding: 14px 18px 18px;
+      text-align: right;
+    }
+
+    .card-content h4,
+    .media-content h4 {
+      font-size: 1.15rem;
+      margin-bottom: 8px;
+      color: var(--primary-color);
+    }
+
+    .card-content p,
+    .media-content p {
+      line-height: 1.8;
+      color: var(--muted-light);
+      font-size: 0.95rem;
+    }
+
+    body.dark .card-content p,
+    body.dark .media-content p {
+      color: var(--muted-dark);
+    }
+
+    .card-badge {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: linear-gradient(135deg, var(--accent-color), #e0bf4e);
+      color: #2b2410;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 800;
+      box-shadow: 0 8px 18px rgba(201,162,39,0.18);
+    }
+
+    #live-streaming,
+    #posters,
+    #videos,
+    #photos {
+      padding: 60px 0 0;
+    }
+
+    .section-padding {
+      padding: 0;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .container {
+      width: 100%;
+    }
+
+    .row {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 18px;
+    }
+
+    .col-lg-4 {
+      grid-column: span 4;
+    }
+
+    .live-stream-card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .live-stream-thumbnail {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .live-stream-thumbnail img,
+    .media-thumb img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.35s ease;
+    }
+
+    .live-stream-card:hover .live-stream-thumbnail img,
+    .media-card:hover .media-thumb img {
+      transform: scale(1.06);
+    }
+
+    .live-badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: linear-gradient(135deg, #e53935, #c62828);
+      color: #fff;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      z-index: 2;
+      box-shadow: 0 6px 14px rgba(229,57,53,0.22);
+    }
+
+    .live-stream-content {
+      padding: 20px;
+      text-align: center;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .live-stream-content h3 {
+      font-size: 1.25rem;
+      color: var(--primary-color);
+      line-height: 1.7;
+    }
+
+    .live-stream-content p {
+      color: var(--muted-light);
+      line-height: 1.8;
+      font-size: 0.95rem;
+    }
+
+    body.dark .live-stream-content p {
+      color: var(--muted-dark);
+    }
+
+    .media-card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .media-thumb {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .media-badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: rgba(15,107,95,0.92);
+      color: #fff;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      z-index: 2;
+    }
+
+    .media-content {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      flex-grow: 1;
+    }
+
+    .video-frame {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border: 0;
+      border-radius: 16px;
+      overflow: hidden;
+      background: #000;
+    }
+
+    .bottom-nav {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 50;
+      padding: 10px 14px 14px;
+      background: transparent;
+    }
+
+    .bottom-nav-inner {
+      width: 100%;
+      max-width: 420px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 12px 10px;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.78);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--border-light);
+      box-shadow: 0 10px 28px rgba(0,0,0,0.08);
+    }
+
+    body.dark .bottom-nav-inner {
+      background: rgba(20,20,20,0.82);
+      border-color: var(--border-dark);
+    }
+
+    .nav-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      color: var(--muted-light);
+      opacity: 0.8;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    body.dark .nav-item {
+      color: var(--muted-dark);
+    }
+
+    .nav-item a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .nav-item.active {
+      opacity: 1;
+      font-weight: 800;
+      color: var(--primary-color);
+      background: rgba(15,107,95,0.08);
+      padding: 8px 14px;
+      border-radius: 16px;
+    }
+
+    .nav-icon {
+      font-size: 1.45rem;
+      line-height: 1;
+    }
+
+    @media (max-width: 768px) {
+      .app-frame { padding: 14px; }
+      .topbar { padding: 12px 14px; }
+      .topbar-logo img { width: 58px; height: 58px; }
+      .topbar-title h1 { font-size: 1.55rem; }
+      .hero { padding: 26px 18px; }
+      .hero h2 { font-size: 1.6rem; }
+      .grid { grid-template-columns: 1fr; }
+      .col-lg-4 { grid-column: span 12; }
+      .section-header h3,
+      .section-header h2 { font-size: 1.3rem; }
+      .bottom-nav-inner { max-width: 100%; }
+    }
+  </style>
+</head>
+<body class="dark">
+  <main class="app-shell">
+    <div class="app-frame">
+
+      <header class="topbar">
+        <div class="topbar-logo">
+          <img src="logo.png" alt="لوگو">
+        </div>
+        <div class="topbar-title">
+          <h1>نذورات</h1>
+          <p>حرم حضرت عبدالعظیم حسنی</p>
+        </div>
+        <div class="topbar-actions">
+          <button class="icon-btn" id="themeToggle" aria-label="تغییر تم">🌙</button>
+        </div>
+      </header>
+
+      <section class="search">
+        <div class="search-box">
+          <span>🔎</span>
+          <input type="text" placeholder="جستجو در نذورات...">
+        </div>
+      </section>
+
+      <div class="announcement-bar" id="announcementBar">
+        <div>📢 اطلاعیه مهم: ثبت نذورات و مشارکت‌های جدید از طریق همین صفحه فعال شده است.</div>
+        <button class="announcement-close" type="button" aria-label="بستن اطلاعیه">×</button>
+      </div>
+
+      <section class="hero">
+        <h2>خوش آمدید 👋</h2>
+        <p>جهت مشاهده اخبار به‌روز مجموعه نذورات و خدمات الکترونیکی، از طریق لینک زیر اقدام نمایید.</p>
+        <div style="margin-top:18px; position: relative; z-index: 1;">
+          <a href="#services" class="btn primary">مشاهده خدمات</a>
+        </div>
+      </section>
+
+    <section class="section" id="services">
+  <div class="section-header">
+    <h3>خدمات نذورات</h3>
+    <a href="#">همه</a>
+  </div>
+
+  <div class="grid">
+    <article class="card">
+      <div class="card-icon">
+        <i class="fas fa-utensils" style="font-size:32px; color: #333;"></i> <!-- آیکون غذا -->
+      </div>
+      <div class="card-content">
+        <h4>غذای حضرتی</h4>
+        <p>جهت شرکت در قرعه‌کشی روزانه غذای حضرتی وارد شوید</p>
+      </div>
+      <div class="card-badge">غذا</div>
+    </article>
+
+    <article class="card">
+      <div class="card-icon">
+        <i class="fas fa-suitcase" style="font-size:32px; color: #333;"></i> <!-- آیکون اشیاء گمشده -->
+      </div>
+      <div class="card-content">
+        <h4>اشیاء گمشده</h4>
+        <p>جهت ثبت مشخصات وسیله گمشده وارد شوید</p>
+      </div>
+      <div class="card-badge">گمشده</div>
+    </article>
+
+    <article class="card">
+      <div class="card-icon">
+        <i class="fas fa-paw" style="font-size:32px; color: #333;"></i> <!-- آیکون عقیقه (حیوان) -->
+      </div>
+      <div class="card-content">
+        <h4>عقیقه</h4>
+        <p>جهت پرداخت نذورات عقیقه خود وارد شوید</p>
+      </div>
+      <div class="card-badge">عقیقه</div>
+    </article>
+
+    <article class="card">
+      <div class="card-icon">
+        <i class="fas fa-mosque" style="font-size:32px; color: #333;"></i> <!-- آیکون قربانی/مسجد -->
+      </div>
+      <div class="card-content">
+        <h4>قربانی</h4>
+        <p>جهت پرداخت نذورات قربانی خود وارد شوید</p>
+      </div>
+      <div class="card-badge">قربانی</div>
+    </article>
+
+    <article class="card">
+      <div class="card-icon">
+        <i class="fas fa-gem" style="font-size:32px; color: #333;"></i> <!-- آیکون ضریح (الماس/جواهر) -->
+      </div>
+      <div class="card-content">
+        <h4>ساخت ضریح حرم</h4>
+        <p>جهت مشارکت در ساخت ضریح مطهر وارد شوید</p>
+      </div>
+      <div class="card-badge">ضریح</div>
+    </article>
+
+    <article class="card">
+      <div class="card-icon">
+        <i class="fas fa-scroll" style="font-size:32px; color: #333;"></i> <!-- آیکون وجوه شرعی -->
+      </div>
+      <div class="card-content">
+        <h4>وجوه شرعی</h4>
+        <p>جهت پرداخت وجوهات شرعی خود وارد شوید</p>
+      </div>
+      <div class="card-badge">شرعی</div>
+    </article>
+  </div>
+</section>
+
+<!-- 
+نکته مهم: برای اینکه آیکون‌های Font Awesome نمایش داده شوند، باید لینک CSS مربوط به Font Awesome را به بخش <head> فایل HTML خود اضافه کنید. مثال:
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+-->
+
+      <section id="live-streaming" class="section-padding">
+        <div class="container">
+          <div class="section-header text-center">
+            <h2>پخش زنده</h2>
+            <p>جدیدترین پخش‌های زنده از حرم مطهر</p>
+          </div>
+          <div class="row">
+            <div class="col-lg-4">
+              <div class="live-stream-card">
+                <div class="live-stream-thumbnail">
+                  <img src="https://ana.ir/c-files/old/1399/02/15/637242150017422596.jpg" alt="پخش زنده حرم حضرت عبدالعظیم">
+                  <span class="live-badge">زنده</span>
+                </div>
+                <div class="live-stream-content">
+                  <h3>پخش زنده حرم حضرت عبدالعظیم حسنی</h3>
+                  <p>پوشش تصویری مستقیم از صحن و رواق‌ها</p>
+                  <a href="https://your-streaming-url.com/abdulazim" class="btn btn-primary" target="_blank">مشاهده زنده</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- پستر
+      <section id="posters" class="section-padding">
+        <div class="section-header">
+          <div>
+            <h2>پسترها</h2>
+            <p>سه پستر نمونه با تصویر و متن</p>
+          </div>
+        </div>
+
+        <div class="grid">
+          <article class="media-card">
+            <div class="media-thumb">
+              <img src="https://picsum.photos/800/500?random=11" alt="پستر 1">
+              <span class="media-badge">پستر</span>
+            </div>
+            <div class="media-content">
+              <h4>پستر اول</h4>
+              <p>متن نمونه برای معرفی پستر اول و محتوای مناسبتی</p>
+            </div>
+          </article>
+
+          <article class="media-card">
+            <div class="media-thumb">
+              <img src="https://picsum.photos/800/500?random=12" alt="پستر 2">
+              <span class="media-badge">پستر</span>
+            </div>
+            <div class="media-content">
+              <h4>پستر دوم</h4>
+              <p>متن نمونه برای معرفی پستر دوم و اطلاع‌رسانی ویژه</p>
+            </div>
+          </article>
+
+          <article class="media-card">
+            <div class="media-thumb">
+              <img src="https://picsum.photos/800/500?random=13" alt="پستر 3">
+              <span class="media-badge">پستر</span>
+            </div>
+            <div class="media-content">
+              <h4>پستر سوم</h4>
+              <p>متن نمونه برای معرفی پستر سوم و خبرهای مهم</p>
+            </div>
+          </article>
+        </div>
+      </section> -->
+
+      
+<section id="live-streaming" class="section-padding">
+  <div class="container">
+    <div class="section-header text-center">
+      <h2>تصاویر</h2>
+      <p>جدیدترین تصاویر واحد نذورات</p>
+    </div>
+    <div class="row">
+      <!-- پخش زنده اول -->
+      <div class="col-lg-4">
+        <div class="live-stream-card">
+          <div class="live-stream-thumbnail">
+            <img src="https://nozorat.abdulazim.com/sites/nozoorat.com/files/u23/IMG_023902.jpg" alt="پخش زنده حرم حضرت عبدالعظیم">
+            <span class="media-badge">عکس</span>
+          </div>
+          <div class="live-stream-content">
+            <h3>عکس شماره یک</h3>
+            <p>توضیحات عکس شماره یک</p>
+            <a href="https://your-streaming-url.com/abdulazim" class="btn btn-primary" target="_blank">مشاهده</a>
+          </div>
+        </div>
+      </div>
+      <!-- پخش زنده دوم -->
+      <div class="col-lg-4">
+        <div class="live-stream-card">
+          <div class="live-stream-thumbnail">
+            <img src="https://nozorat.abdulazim.com/sites/nozoorat.com/files/u23/photo_2023-04-11_14-35-26.jpg" alt="پخش زنده حرم حضرت عبدالعظیم">
+            <span class="media-badge">عکس</span>
+          </div>
+          <div class="live-stream-content">
+            <h3>عکس شماره دو</h3>
+            <p>توضیحات عکس شماره دو</p>
+            <a href="https://your-streaming-url.com/abdulazim" class="btn btn-primary" target="_blank">مشاهده</a>
+          </div>
+        </div>
+      </div>
+      <!-- پخش زنده سوم -->
+      <div class="col-lg-4">
+        <div class="live-stream-card">
+          <div class="live-stream-thumbnail">
+            <img src="https://nozorat.abdulazim.com/sites/nozoorat.com/files/u23/photo_2023-04-11_14-34-43.jpg" alt="پخش زنده حرم حضرت عبدالعظیم">
+            <span class="media-badge">عکس</span>
+          </div>
+          <div class="live-stream-content">
+            <h3>عکس شماره سه</h3>
+            <p>توضیحات عکس شماره سه</p>
+            <a href="https://your-streaming-url.com/abdulazim" class="btn btn-primary" target="_blank">مشاهده</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+      <!-- ویدیو -->
+      <section id="videos" class="section-padding">
+        <div class="section-header">
+          <div>
+            <h2>ویدیوها</h2>
+            <p>ویدیو نمونه برای نمایش محتوای چندرسانه‌ای</p>
+          </div>
+        </div>
+
+        <div class="grid">
+          <article class="media-card">
+            <div class="media-thumb">
+              <iframe class="video-frame" src="https://nozorat.abdulazim.com/sites/nozoorat.com/files/videos/original/18089-Vid%2020240310%20164249_0.mp4" title="ویدیو 3" allowfullscreen></iframe>
+              <span class="media-badge">ویدیو</span>
+            </div>
+            <div class="media-content">
+              <h4>ویدیو سوم</h4>
+              <p>ویدیو نمونه برای معرفی محتوای سوم</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- عکس -->
+      <section id="photos" class="section-padding">
+        <div class="section-header">
+          <div>
+            <h2>پسترها</h2>
+            <p>آخرین پسترهای واحد نذورات</p>
+          </div>
+        </div>
+
+        <div class="grid">
+          <article class="media-card">
+            <div class="media-thumb">
+              <img src="https://nozorat.abdulazim.com/sites/nozoorat.com/files/u23/IMG_9652.jpg" alt="عکس 1">
+              <span class="media-badge">عکس</span>
+            </div>
+            <div class="media-content">
+              <h4>متن نمونه شماره یک</h4>
+              <p>توضیحات متن شماره یک</p>
+            </div>
+          </article>
+
+          <article class="media-card">
+            <div class="media-thumb">
+              <img src="https://nozorat.abdulazim.com/sites/nozoorat.com/files/u23/IMG_9844.jpg" alt="عکس 2">
+              <span class="media-badge">عکس</span>
+            </div>
+            <div class="media-content">
+              <h4>متن نمونه شماره دو</h4>
+              <p>توضیحات متن شماره دو</p>
+            </div>
+          </article>
+
+          <article class="media-card">
+            <div class="media-thumb">
+              <img src="https://nozorat.abdulazim.com/sites/nozoorat.com/files/u23/IMG_9850.jpg" alt="عکس 3">
+              <span class="media-badge">عکس</span>
+            </div>
+            <div class="media-content">
+              <h4>متن نمونه شماره سه</h4>
+              <p>توضیحات متن شماره سه</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <nav class="bottom-nav" aria-label="منوی پایین">
+  <div class="bottom-nav-inner">
+    <div class="nav-item active">
+      <div class="nav-icon">🏠</div>
+      <div>خانه</div>
+    </div>
+
+    <div class="nav-item">
+      <div class="nav-icon">🖼️</div>
+      <div><a href="index2.html">نگار خانه</a></div>
+    </div>
+
+    <div class="nav-item">
+      <div class="nav-icon">📚</div>
+      <div><a href="index3.html">مقالات</a></div>
+    </div>
+
+    <div class="nav-item">
+      <div class="nav-icon">📞</div>
+      <div><a href="contact.html">تماس با ما</a></div>
+    </div>
+  </div>
+</nav>
+
+
+  <script>
+    const body = document.body;
+    const toggleBtn = document.getElementById('themeToggle');
+    const announcementBar = document.getElementById('announcementBar');
+    const closeAnnouncementBtn = announcementBar?.querySelector('.announcement-close');
+
+    const savedTheme = localStorage.getItem('theme');
+    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    function applyTheme(theme) {
+      if (theme === 'dark' || (!savedTheme && systemPrefersDark && theme !== 'light')) {
+        body.classList.add('dark');
+        toggleBtn.textContent = '☀️';
+      } else {
+        body.classList.remove('dark');
+        toggleBtn.textContent = '🌙';
+      }
+      localStorage.setItem('theme', theme);
+    }
+
+    toggleBtn.addEventListener('click', () => {
+      const currentTheme = body.classList.contains('dark') ? 'dark' : 'light';
+      applyTheme(currentTheme === 'dark' ? 'light' : 'dark');
+    });
+
+    applyTheme(savedTheme || (systemPrefersDark ? 'dark' : 'light'));
+
+    if (closeAnnouncementBtn) {
+      closeAnnouncementBtn.addEventListener('click', () => {
+        announcementBar.style.display = 'none';
+      });
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          targetElement.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+
+    const sections = document.querySelectorAll("section[id]");
+    window.addEventListener("scroll", navHighlighter);
+
+    function navHighlighter() {
+      let scrollY = window.pageYOffset;
+      sections.forEach(current => {
+        const sectionHeight = current.offsetHeight;
+        const sectionTop = (current.getBoundingClientRect().top + window.pageYOffset) - 50;
+        const sectionId = current.getAttribute("id");
+
+        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+          document.querySelectorAll('.bottom-nav-inner .nav-item').forEach(item => item.classList.remove('active'));
+          if (sectionId === "services") {
+            document.querySelector(".bottom-nav-inner .nav-item:nth-child(1)")?.classList.add('active');
+          }
+        }
+      });
+    }
+  </script>
+</body>
+</html>
