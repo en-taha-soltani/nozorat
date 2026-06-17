@@ -1,0 +1,357 @@
+<!-- هوالحبیب -->
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>نگارخانه</title>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;700;800&family=Lalezar&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+<style>
+
+.gallery-page{
+padding-top:20px;
+}
+
+.gallery-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:20px;
+}
+
+.gallery-header h2{
+font-family:Lalezar;
+font-size:28px;
+color:var(--primary-color);
+}
+
+.gallery-count{
+background:rgba(201,162,39,.15);
+color:var(--accent-color);
+padding:8px 15px;
+border-radius:20px;
+}
+
+.gallery-filter{
+display:flex;
+gap:10px;
+overflow:auto;
+margin-bottom:25px;
+}
+
+.filter-item{
+padding:9px 18px;
+border-radius:25px;
+background:var(--surface-light);
+border:1px solid var(--border-light);
+color:var(--text-light);
+white-space:nowrap;
+}
+
+body.dark .filter-item{
+background:var(--surface-dark);
+color:var(--text-dark);
+}
+
+.filter-item.active{
+background:var(--primary-color);
+color:white;
+}
+/* گالری اصلی */
+
+.gallery-grid{
+display:grid;
+grid-template-columns:
+repeat(auto-fill,minmax(220px,1fr));
+gap:18px;
+}
+
+.photo-card{
+position:relative;
+height:260px;
+border-radius:24px;
+overflow:hidden;
+background:var(--surface-light);
+border:1px solid var(--border-light);
+box-shadow:var(--shadow-light);
+}
+
+body.dark .photo-card{
+background:var(--surface-dark);
+border-color:var(--border-dark);
+box-shadow:var(--shadow-dark);
+}
+
+.photo-card img{
+width:100%;
+height:100%;
+object-fit:cover;
+transition:.4s;
+}
+
+.photo-card:hover img{
+transform:scale(1.08);
+}
+
+.photo-overlay{
+position:absolute;
+inset:0;
+display:flex;
+flex-direction:column;
+justify-content:flex-end;
+padding:18px;
+background:
+linear-gradient(
+transparent,
+rgba(0,0,0,.85)
+);
+}
+
+.photo-overlay h3{
+color:white;
+font-size:17px;
+margin-bottom:8px;
+}
+
+.photo-info{
+display:flex;
+justify-content:space-between;
+align-items:center;
+color:#ddd;
+font-size:13px;
+}
+
+.photo-tag{
+background:var(--accent-color);
+color:#222;
+padding:5px 12px;
+border-radius:20px;
+}
+
+@media(max-width:600px){
+.gallery-grid{
+grid-template-columns:
+repeat(2,1fr);
+gap:12px;
+}
+
+.photo-card{
+height:200px;
+}
+}
+
+</style>
+
+</head>
+
+<body>
+
+<main class="app-shell">
+<div class="app-frame">
+
+<header class="topbar">
+<div class="topbar-logo">
+<!-- <img src="https://nozorat.abdulazim.com/sites/all/themes/nozooratthemes/logo.png"> -->
+</div>
+<div class="topbar-title">
+<h1>
+نگارخانه
+</h1>
+<p>
+حرم حضرت عبدالعظیم حسنی
+</p>
+</div>
+<div class="topbar-actions">
+<button class="icon-btn" id="themeToggle">
+🌙
+</button>
+</div>
+</header>
+
+<section class="gallery-page">
+<div class="gallery-header">
+<h2>
+تصاویر حرم
+</h2>
+<div class="gallery-count">
++120 تصویر
+</div>
+</div>
+<div class="gallery-filter">
+<div class="filter-item active">
+تصاویر
+</div>
+<div class="filter-item">
+ویدیو
+</div>
+</div>
+
+
+<div class="gallery-grid">
+<div class="photo-card">
+<img src="https://nozorat.abdulazim.com/sites/nozoorat.com/files/u23/IMG_023902.jpg">
+<div class="photo-overlay">
+<h3>
+صحن مطهر
+</h3>
+<div class="photo-info">
+<span>
+<i class="fa fa-image"></i>
+ عکس
+</span>
+<span class="photo-tag">
+حرم
+</span>
+</div>
+</div>
+</div>
+
+
+<div class="photo-card">
+<img src="https://nozorat.abdulazim.com/sites/nozoorat.com/files/u23/photo_2023-04-11_14-35-26.jpg">
+<div class="photo-overlay">
+<h3>
+مراسم مذهبی
+</h3>
+<div class="photo-info">
+<span>
+<i class="fa fa-camera"></i>
+ تصویر
+</span>
+<span class="photo-tag">
+مراسم
+</span>
+</div>
+</div>
+</div>
+
+
+<div class="photo-card">
+<img src="https://nozorat.abdulazim.com/sites/nozoorat.com/files/u23/photo_2023-04-11_14-35-26.jpg">
+<div class="photo-overlay">
+<h3>
+مراسم مذهبی
+</h3>
+<div class="photo-info">
+<span>
+<i class="fa fa-camera"></i>
+ تصویر
+</span>
+<span class="photo-tag">
+مراسم
+</span>
+</div>
+</div>
+</div>
+
+
+<div class="photo-card">
+<img src="https://nozorat.abdulazim.com/sites/nozoorat.com/files/u23/photo_2023-04-11_14-35-26.jpg">
+<div class="photo-overlay">
+<h3>
+مراسم مذهبی
+</h3>
+<div class="photo-info">
+<span>
+<i class="fa fa-camera"></i>
+ تصویر
+</span>
+<span class="photo-tag">
+مراسم
+</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div class="pagination">
+<button class="page-btn">
+‹
+</button>
+<button class="page-btn active">
+1
+</button>
+<button class="page-btn">
+2
+</button>
+<button class="page-btn">
+3
+</button>
+<button class="page-btn">
+4
+</button>
+<span>
+...
+</span>
+<button class="page-btn">
+10
+</button>
+<button class="page-btn">
+›
+</button>
+</div>
+</div>
+
+</main>
+
+
+<nav class="bottom-nav">
+<div class="bottom-nav-inner">
+<a class="nav-item" href="index.html">
+<div class="nav-icon">
+<i class="fas fa-home"></i>
+</div>
+<span>
+خانه
+</span>
+</a>
+<a class="nav-item active" href="index2.html">
+<div class="nav-icon">
+<i class="fas fa-images"></i>
+</div>
+<span>
+نگارخانه
+</span>
+</a>
+<a class="nav-item" href="index3.html">
+<div class="nav-icon">
+<i class="fas fa-book"></i>
+</div>
+<span>
+مقالات
+</span>
+</a>
+<a class="nav-item" href="contact.html">
+<div class="nav-icon">
+<i class="fas fa-phone"></i>
+</div>
+<span>
+تماس
+</span>
+</a>
+</div>
+</nav>
+
+
+<script>
+const body=document.body;
+const btn=document.getElementById("themeToggle");
+const saved=localStorage.getItem("theme");
+if(saved==="dark"){
+body.classList.add("dark");
+}
+btn.onclick=function(){
+body.classList.toggle("dark");
+localStorage.setItem(
+"theme",
+body.classList.contains("dark")?"dark":"light"
+);
+};
+</script>
+
+</body>
+
+</html>
+<!-- طاها سلطانی -->
