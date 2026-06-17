@@ -35,7 +35,15 @@
       --card-gradient-light: linear-gradient(180deg, rgba(255,255,255,0.92) 0%, rgba(245,240,229,0.92) 100%);
       --card-gradient-dark: linear-gradient(180deg, rgba(28,28,28,0.98) 0%, rgba(20,20,20,0.98) 100%);
     }
-
+    @keyframes changeBackgroundColor {
+  0% { background-color: #0F4F4D; } /* رنگ اصلی شما */
+  20% { background-color: #008080; } /* رنگ سبز یشمی تیره‌تر */
+  40% { background-color: #20B2AA; } /* رنگ سبز یشمی روشن‌تر */
+  60% { background-color: #008080; } /* بازگشت به رنگ تیره */
+  80% { background-color: #0F4F4D; } /* بازگشت به رنگ اصلی */
+  100% { background-color: #0F4F4D; } /* اتمام با رنگ روشن */
+}
+   
     * {
       box-sizing: border-box;
       margin: 0;
@@ -638,68 +646,68 @@
   </div>
 
   <div class="grid">
-    <article class="card">
-      <div class="card-icon">
-        <i class="fas fa-utensils" style="font-size:32px; color: #333;"></i> <!-- آیکون غذا -->
+    <article class="card" style="animation: changeBackgroundColor 15s infinite;">
+      <div class="card-icon" style="animation: changeBackgroundColor 15s infinite;">
+        <i class="fas fa-utensils" style="font-size:32px; color: #DAB844;"></i> <!-- آیکون غذا -->
       </div>
-      <div class="card-content">
-        <h4>غذای حضرتی</h4>
-        <p>جهت شرکت در قرعه‌کشی روزانه غذای حضرتی وارد شوید</p>
+      <div class="card-content" style="animation: changeBackgroundColor 15s infinite;">
+        <h4 style="color: white;">غذای حضرتی</h4>
+        <p style="color: rgb(213, 213, 213);">جهت شرکت در قرعه‌کشی روزانه غذای حضرتی وارد شوید</p>
       </div>
       <div class="card-badge">غذا</div>
     </article>
 
-    <article class="card">
-      <div class="card-icon">
-        <i class="fas fa-suitcase" style="font-size:32px; color: #333;"></i> <!-- آیکون اشیاء گمشده -->
+    <article class="card" style="animation: changeBackgroundColor 15s infinite;">
+      <div class="card-icon" style="animation: changeBackgroundColor 15s infinite;">
+        <i class="fas fa-suitcase" style="font-size:32px; color: #DAB844;"></i> <!-- آیکون اشیاء گمشده -->
       </div>
-      <div class="card-content">
-        <h4>اشیاء گمشده</h4>
-        <p>جهت ثبت مشخصات وسیله گمشده وارد شوید</p>
+      <div class="card-content" style="animation: changeBackgroundColor 15s infinite;">
+        <h4 style="color: white;">اشیاء گمشده</h4>
+        <p style="color: rgb(213, 213, 213);">جهت ثبت مشخصات وسیله گمشده وارد شوید</p>
       </div>
       <div class="card-badge">گمشده</div>
     </article>
 
-    <article class="card">
-      <div class="card-icon">
-        <i class="fas fa-paw" style="font-size:32px; color: #333;"></i> <!-- آیکون عقیقه (حیوان) -->
+    <article class="card" style="animation: changeBackgroundColor 15s infinite;">
+      <div class="card-icon" style="animation: changeBackgroundColor 15s infinite;">
+        <i class="fas fa-paw" style="font-size:32px; color: #DAB844;"></i> <!-- آیکون عقیقه (حیوان) -->
       </div>
-      <div class="card-content">
-        <h4>عقیقه</h4>
-        <p>جهت پرداخت نذورات عقیقه خود وارد شوید</p>
+      <div class="card-content" style="animation: changeBackgroundColor 15s infinite;">
+        <h4 style="color: white;">عقیقه</h4>
+        <p style="color: rgb(213, 213, 213);">جهت پرداخت نذورات عقیقه خود وارد شوید</p>
       </div>
       <div class="card-badge">عقیقه</div>
     </article>
 
-    <article class="card">
-      <div class="card-icon">
-        <i class="fas fa-mosque" style="font-size:32px; color: #333;"></i> <!-- آیکون قربانی/مسجد -->
+    <article class="card" style="animation: changeBackgroundColor 15s infinite;">
+      <div class="card-icon" style="animation: changeBackgroundColor 15s infinite;">
+        <i class="fas fa-mosque" style="font-size:32px; color: #DAB844;"></i> <!-- آیکون قربانی/مسجد -->
       </div>
-      <div class="card-content">
-        <h4>قربانی</h4>
-        <p>جهت پرداخت نذورات قربانی خود وارد شوید</p>
+      <div class="card-content" style="animation: changeBackgroundColor 15s infinite;">
+        <h4 style="color: white;">قربانی</h4>
+        <p style="color: rgb(213, 213, 213);">جهت پرداخت نذورات قربانی خود وارد شوید</p>
       </div>
       <div class="card-badge">قربانی</div>
     </article>
 
-    <article class="card">
-      <div class="card-icon">
-        <i class="fas fa-gem" style="font-size:32px; color: #333;"></i> <!-- آیکون ضریح (الماس/جواهر) -->
+    <article class="card" style="animation: changeBackgroundColor 15s infinite;">
+      <div class="card-icon" style="animation: changeBackgroundColor 15s infinite;">
+        <i class="fas fa-gem" style="font-size:32px; color: #DAB844;"></i> <!-- آیکون ضریح (الماس/جواهر) -->
       </div>
-      <div class="card-content">
-        <h4>ساخت ضریح حرم</h4>
-        <p>جهت مشارکت در ساخت ضریح مطهر وارد شوید</p>
+      <div class="card-content" style="animation: changeBackgroundColor 15s infinite;">
+        <h4 style="color: white;">ساخت ضریح حرم</h4>
+        <p style="color: rgb(213, 213, 213);">جهت مشارکت در ساخت ضریح مطهر وارد شوید</p>
       </div>
       <div class="card-badge">ضریح</div>
     </article>
 
-    <article class="card">
-      <div class="card-icon">
-        <i class="fas fa-scroll" style="font-size:32px; color: #333;"></i> <!-- آیکون وجوه شرعی -->
+    <article class="card" style="animation: changeBackgroundColor 15s infinite;">
+      <div class="card-icon" style="animation: changeBackgroundColor 15s infinite;">
+        <i class="fas fa-scroll" style="font-size:32px; color: #DAB844;"></i> <!-- آیکون وجوه شرعی -->
       </div>
-      <div class="card-content">
-        <h4>وجوه شرعی</h4>
-        <p>جهت پرداخت وجوهات شرعی خود وارد شوید</p>
+      <div class="card-content" style="animation: changeBackgroundColor 15s infinite;">
+        <h4 style="color: white;">وجوه شرعی</h4>
+        <p style="color: rgb(213, 213, 213);">جهت پرداخت وجوهات شرعی خود وارد شوید</p>
       </div>
       <div class="card-badge">شرعی</div>
     </article>
@@ -786,7 +794,6 @@
   <div class="container">
     <div class="section-header text-center">
       <h2>تصاویر</h2>
-      <p>جدیدترین تصاویر واحد نذورات</p>
     </div>
     <div class="row">
       <!-- پخش زنده اول -->
@@ -840,7 +847,6 @@
         <div class="section-header">
           <div>
             <h2>ویدیوها</h2>
-            <p>ویدیو نمونه برای نمایش محتوای چندرسانه‌ای</p>
           </div>
         </div>
 
