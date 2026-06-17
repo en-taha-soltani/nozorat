@@ -600,9 +600,20 @@
       .section-header h2 { font-size: 1.3rem; }
       .bottom-nav-inner { max-width: 100%; }
     }
+    #fixed-icon {
+  position: fixed;      /* باعث می‌شود با اسکرول ثابت بماند */
+  top: 10px;            /* فاصله از لبه بالایی صفحه (مثلاً 10 پیکسل) */
+  left: 10px;           /* فاصله از لبه سمت چپ صفحه (این مقدار را جایگزین right کردیم) */
+  width: 70px;          /* عرض آیکون (مثلاً 50 پیکسل) */
+  height: 60px;         /* ارتفاع آیکون (مثلاً 50 پیکسل) */
+  z-index: 1000;            /* اطمینان از اینکه روی سایر عناصر قرار می‌گیرد */
+  /* می‌توانید استایل‌های بیشتری مثل border-radius برای گرد کردن گوشه‌ها اضافه کنید */
+  /* border-radius: 50%; */
+}
   </style>
 </head>
 <body class="dark">
+  <img src="https://s3.picofile.com/file/7992473331/_babol2011_blogfa_com_5.gif" alt="My Icon" id="fixed-icon">
   <main class="app-shell">
     <div class="app-frame">
 
