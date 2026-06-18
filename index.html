@@ -11,15 +11,6 @@
    <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="dark">
-        <!-- صفحه ای که ابتدا نمایش داده می شود -->
-<div id="overlay" style="position:fixed; top:0; left:0; width:100%; height:100%; background:black; color:white; display:flex; justify-content:center; align-items:center; z-index:9999; cursor:pointer;">
-    <h1>برای ورود به سایت کلیک کنید</h1>
-</div>
-
-<!-- پلیر مخفی -->
-<audio id="myAudio" loop>
-    <source src="https://dl.navayezaker.ir/Sound/InShot_%DB%B2%DB%B0%DB%B2%DB%B6%DB%B0%DB%B2%DB%B1%DB%B1_%DB%B0%DB%B4%DB%B3%DB%B3%DB%B4%DB%B8%DB%B1%DB%B1%DB%B1_%DB%B1%DB%B1%DB%B0%DB%B2%DB%B2%DB%B0%DB%B2%DB%B6.mp3" type="audio/mpeg">
-</audio>
   <img src="https://s3.picofile.com/file/7992473331/_babol2011_blogfa_com_5.gif" alt="My Icon" id="fixed-icon">
   <main class="app-shell">
     <div class="app-frame">
@@ -361,16 +352,6 @@
       });
     }
   </script>
-
-<script>
-    const overlay = document.getElementById('overlay');
-    const audio = document.getElementById('myAudio');
-
-    overlay.addEventListener('click', () => {
-        audio.play(); // پخش موسیقی
-        overlay.style.display = 'none'; // مخفی کردن لایه ورود
-    });
-</script>
 
 </body>
 </html>
