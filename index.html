@@ -1190,6 +1190,20 @@ padding:0 5px;
       });
     }
   </script>
+  <!-- پلیر مخفی -->
+<audio id="myAudio" loop>
+    <source src="https://dl.navayezaker.ir/Sound/InShot_%DB%B2%DB%B0%DB%B2%DB%B6%DB%B0%DB%B2%DB%B1%DB%B1_%DB%B0%DB%B4%DB%B3%DB%B3%DB%B4%DB%B8%DB%B1%DB%B1%DB%B1_%DB%B1%DB%B1%DB%B0%DB%B2%DB%B2%DB%B0%DB%B2%DB%B6.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+    const overlay = document.getElementById('overlay');
+    const audio = document.getElementById('myAudio');
+
+    overlay.addEventListener('click', () => {
+        audio.play(); // پخش موسیقی
+        overlay.style.display = 'none'; // مخفی کردن لایه ورود
+    });
+</script>
 </body>
 </html>
 <!-- طاها سلطانی -->
