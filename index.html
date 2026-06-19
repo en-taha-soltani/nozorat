@@ -1,406 +1,76 @@
-<!-- هوالحبیب -->
 <!DOCTYPE html>
 <html lang="fa">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>سامانه مدریتی نذورات حرم حضرت عبدالعظیم حسنی</title>
-    <!-- <link rel="stylesheet" href="assets/css/fonts.css">
-    <link rel="stylesheet" href="assets/css/boxicons.css"> -->
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body class="nav-fixed">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f2f2f2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
 
-  <nav class="is-rtl topnav navbar navbar-expand shadow justify-content-between justify-content-sm-start navbar-light bg-white" id="snavAccordion">
-    <button class="btn btn-icon btn-transparent-dark order-1 order-lg-0 me-2 ms-lg-2 me-lg-0" id="sidebarToggle">
-      <i class="bx bx-menu bx-sm"></i>
-    </button>
-    <a class="navbar-brand pe-3 ps-4 ps-lg-2" href="index.html">نذورات</a>
-    <form class="form-inline me-auto d-none d-lg-block me-3">
-      <div class="input-group input-group-joined input-group-solid">
-        <input class="form-control pe-0" type="search" placeholder="جستجو ..." aria-label="جستجو">
-        <div class="input-group-text"><i class="bx bx-search bx-sm"></i></div>
-      </div>
-    </form>
+    .login-box {
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      width: 300px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
 
-    <!-- Navbar Items-->
-    <ul class="navbar-nav align-items-center ms-auto">
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+    }
 
-      <!-- Navbar Search Dropdown-->
-      <!-- * * Note: * * Visible only below the lg breakpoint-->
-      <li class="nav-item dropdown no-caret me-3 d-lg-none">
-        <a class="btn btn-icon btn-transparent-dark dropdown-toggle" id="searchDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="bx bx-search bx-sm"></i>
-        </a>
-        <!-- Dropdown - Search-->
-        <div class="dropdown-menu dropdown-menu-end p-3 shadow animated--fade-in-up" aria-labelledby="searchDropdown">
-          <form class="form-inline me-auto w-100">
-            <div class="input-group input-group-joined input-group-solid">
-              <input class="form-control pe-0" type="text" placeholder="جستجو ..." aria-label="Search" aria-describedby="basic-addon2">
-              <div class="input-group-text"><i class="bx bx-search"></i></div>
-            </div>
-          </form>
-        </div>
-      </li>
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #28a745;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
 
-      <!-- Alerts Dropdown-->
-      <li class="nav-item dropdown no-caret d-none d-sm-block me-3 bdr-notify">
-        <a class="btn btn-icon btn-transparent-dark dropdown-toggle" id="navbarDropdownAlerts" href="javascript:void(0);" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="bx bx-bell bx-sm"></i>
-        </a>
-        <div class="dropdown-menu dropdown-menu-end border-0 shadow animated--fade-in-up" aria-labelledby="navbarDropdownAlerts">
-          <h6 class="dropdown-header bdr-notify-header">
-            <i class="bx bx-bell me-2"></i>
-            اعلان‌ها
-          </h6>
-          <div class="dropdown-div">
+    button:hover {
+      background: #218838;
+    }
 
-            <!-- اعلان 1-->
-            <a class="dropdown-item bdr-notify-item" href="#">
-              <div class="bdr-notify-item-icon bg-warning"><i class="bx bx-wallet"></i></div>
-              <div class="bdr-notify-item-content">
-                <p>ثبت اشیاء گمشده کارت ملی</p>
-                <small class="text-muted">جدید امروز</small>
-              </div>
-            </a>
-            <!-- اعلان 2-->
-            <a class="dropdown-item bdr-notify-item" href="#">
-              <div class="bdr-notify-item-icon bg-info"><i class="bx bx-wallet"></i></div>
-              <div class="bdr-notify-item-content">
-                <p>راه اندازی سامانه مدریتی نذورات</p>
-                <small class="text-muted">قدیم</small>
-              </div>
-            </a>
-          </div>
-          <a class="dropdown-item bdr-notify-footer" href="#">مشاهده همه اعلان ها</a>
-        </div>
-      </li>
+    .error {
+      color: red;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
 
-      
-    </ul>
-  </nav>
-  <div id="layoutSidenav">
-    <div id="layoutSidenav_nav">
-      <nav class="snav shadow-right snav-light">
-        <div class="snav-menu">
-          <div class="nav accordion" id="accordionSidenav">
+<div class="login-box">
+  <h3>Login</h3>
 
+  <input type="text" id="username" placeholder="Username">
+  <input type="password" id="password" placeholder="Password">
 
-            <div class="snav-menu-heading d-sm-none">حساب کاربری</div>
+  <button onclick="login()">Login</button>
 
-            <!-- اعلان ها -->
-            <a class="nav-link d-sm-none" href="#">
-              <div class="nav-link-icon"><i class="bx bx-bell "></i></div>
-              اعلان ها
-              <span class="badge bg-warning-soft text-warning ms-auto">4 جدید!</span>
-            </a>
+  <p class="error" id="error"></p>
+</div>
 
-            <!-- پیام ها -->
-            <a class="nav-link d-sm-none" href="#">
-              <div class="nav-link-icon"><i class="bx bx-envelope"></i></div>
-              پیام ها
-              <span class="badge bg-success-soft text-success ms-auto">2 جدید!</span>
-            </a>
-            
+<script>
+  function login() {
+    const user = document.getElementById("username").value;
+    const pass = document.getElementById("password").value;
 
-            <div class="snav-menu-heading">هسته</div>
+    if (user === "admin" && pass === "admin12345") {
+      window.location.href = "index3.html";
+    } else {
+      document.getElementById("error").innerText = "نام کاربری یا رمز اشتباه است";
+    }
+  }
+</script>
 
-            <!-- پیشخوان -->
-            <a class="nav-link collapsed active" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseDashboards" aria-expanded="false" aria-controls="collapseDashboards">
-              <div class="nav-link-icon"><i class="bx bx-pulse"></i></div>
-              داشبورد
-              <div class="snav-collapse-arrow"><i class="bx bx-chevron-down"></i></div>
-            </a>
-            <div class="collapse" id="collapseDashboards" data-bs-parent="#accordionSidenav">
-              <nav class="snav-menu-nested nav accordion" id="accordionSidenavPages">
-                <a class="nav-link active" href="index.html">پنل مدریتی روز</a>
-                <a class="nav-link" href="index2.html">پنل مدریت آمار</a>
-              </nav>
-            </div>
-
-
-
-            <div class="snav-menu-heading">فعالیت های نذورات</div>
-            <!-- برگه ها -->
-            <a class="nav-link collapsed pt-0" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
-              <div class="nav-link-icon"><i class="bx bx-grid"></i></div>
-              برگه ها
-              <div class="snav-collapse-arrow"><i class="bx bx-chevron-down"></i></div>
-            </a>
-            <div class="collapse" id="collapsePages" data-bs-parent="#accordionSidenav">
-
-
-              <nav class="snav-menu-nested nav accordion" id="accordionSidenavPagesMenu">
-
-               <!-- فاکتور -->
-                <a class="nav-link" href="index3.html">اشیاء پیدا شده</a>
-                   
-                  </nav>
-                </div>
-      </nav>
-    </div>
-    <div id="layoutSidenav_content">
-
-      <main class="is-rtl">
-        <header class="page-header page-header-dark bg-gradient-primary-to-secondary pb-10">
-          <div class="container-xl px-4">
-            <div class="page-header-content pt-4">
-              <div class="row align-items-center justify-content-between">
-                <div class="col-auto mt-4">
-                  <h1 class="page-header-title">
-                    <!-- <div class="page-header-icon"><i class="bx bx-pulse"></i></div> -->
-                    داشبورد مدریتی نذورات حرم حضرت عبدالعظیم حسنی
-                  </h1>
-                  <div class="page-header-subtitle">نذورات حرم حضرت عبدالعظیم حسنی</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </header>
-        <!-- Main page content -->
-        <div class="container-xl px-4 mt-n10">
-          <div class="row">
-            <div class="col-xl-4 mb-4">
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-xxl-8">
-              <!-- Tabbed dashboard card example-->
-              <div class="card mb-4">
-                <div class="card-header border-bottom">
-                  <!-- Dashboard card navigation-->
-                  <ul class="nav nav-tabs card-header-tabs" id="dashboardNav" role="tablist">
-                    <li class="nav-item me-1"><a class="nav-link active" id="overview-pill" href="#overview" data-bs-toggle="tab" role="tab" aria-controls="overview" aria-selected="true">نذورات پرداختی</a></li>
-                    <li class="nav-item"><a class="nav-link" id="activities-pill" href="#activities" data-bs-toggle="tab" role="tab" aria-controls="activities" aria-selected="false">جزئیات</a></li>
-                  </ul>
-                </div>
-                <div class="card-body">
-                  <div class="tab-content" id="dashboardNavContent">
-                    <!-- Dashboard Tab Pane 1-->
-                    <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview-pill">
-                      <div class="chart-area mb-4 mb-lg-0" style="height: 20rem"><canvas id="myAreaChart" width="100%" height="30"></canvas></div>
-                    </div>
-                    <!-- Dashboard Tab Pane 2-->
-                    <div class="tab-pane fade" id="activities" role="tabpanel" aria-labelledby="activities-pill">
-                      <table id="datatablesSimple">
-                        <thead>
-                        <tr>
-                          <th>تاریخ</th>
-                          <th>رویداد</th>
-                          <th>زمان</th>
-                        </tr>
-                        </thead>
-                        <tfoot>
-                        <tr>
-                          <th>تاریخ</th>
-                          <th>رویداد</th>
-                          <th>زمان</th>
-                        </tr>
-                        </tfoot>
-                        <tbody>
-                        <tr>
-                          <td>405/03/29</td>
-                          <td>
-                            <i class="me-2 text-green" data-feather="zap"></i>
-                            طاها سلطانی 25 ملیون نذورات قربانی
-                          </td>
-                          <td>1:21 ق.ب</td>
-                        </tr>
-                        <tr>
-                          <td>405/03/28</td>
-                          <td>
-                            <i class="me-2 text-red" data-feather="zap-off"></i>
-                           راه اندازی سامانه مدریتی نذورات
-                          </td>
-                          <td>1:00 ق.ب</td>
-                        </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <!-- Dashboard activity timeline example-->
-                <div class="col-xl-6 mb-4">
-                  <div class="card card-header-actions h-100">
-                    <div class="card-header">
-                      آخرین فعالیت
-                      <div class="dropdown no-caret">
-                        <button class="btn btn-transparent-dark btn-icon dropdown-toggle" id="dropdownMenuButton" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical text-gray-500"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg></button>
-                        <div class="dropdown-menu dropdown-menu-end animated--fade-in-up" aria-labelledby="dropdownMenuButton">
-                          <h6 class="dropdown-header">فیلتر فعالیت:</h6>
-                          <a class="dropdown-item" href="#!"><span class="badge bg-green-soft text-green my-1">غذای حضرتی</span></a>
-                          <a class="dropdown-item" href="#!"><span class="badge bg-blue-soft text-blue my-1">اشیائ پیدا شده</span></a>
-                          <a class="dropdown-item" href="#!"><span class="badge bg-yellow-soft text-yellow my-1">نذورات</span></a>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="card-body">
-                      <div class="timeline timeline-xs">
-                        <!-- Timeline Item 1-->
-                        <div class="timeline-item">
-                          <div class="timeline-item-marker">
-                            <div class="timeline-item-marker-text">امروز</div>
-                            <div class="timeline-item-marker-indicator bg-green"></div>
-                          </div>
-                          <div class="timeline-item-content">
-                            امروز 250 عدد غذا حضرتی وعده ناهار
-                            <a class="fw-bold text-dark" href="#!">(لیست آماری غذای حضرتی)</a>
-                            با موفقیت ثبت شده است.
-                          </div>
-                        </div>
-                        <!-- Timeline Item 2-->
-                        <div class="timeline-item">
-                          <div class="timeline-item-marker">
-                            <div class="timeline-item-marker-text">دیروز</div>
-                            <div class="timeline-item-marker-indicator bg-blue"></div>
-                          </div>
-                          <div class="timeline-item-content">
-                            ثبت یک عدد مفقودی
-                            <a class="fw-bold text-dark" href="#!">(جزئیات)</a>
-                           با موفقیت ثبت شد
-                          </div>
-                        </div>
-                         <!-- Timeline Item 2-->
-                        <div class="timeline-item">
-                          <div class="timeline-item-marker">
-                            <div class="timeline-item-marker-text">امروز</div>
-                            <div class="timeline-item-marker-indicator bg-orange"></div>
-                          </div>
-                          <div class="timeline-item-content">
-                            دو ملیون سیصد هزارتومان
-                            <a class="fw-bold text-dark" href="#!">(جزئیات)</a>
-                           با موفقیت ثبت شد
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Pie chart with legend example-->
-                <div class="col-xl-6 mb-4">
-
-                  <div class="card h-100">
-                    <div class="card-header">غذای حضرتی امروز</div>
-                    <div class="card-body">
-                      <div class="chart-pie mb-4"><canvas id="myPieChart" width="100%" height="50"></canvas></div>
-                      <div class="list-group list-group-flush">
-                        <div class="list-group-item d-flex align-items-center justify-content-between small">
-                    
-                          <div class="me-3">
-                            <i class="bx bx-circle me-1 text-orange"></i>
-                             دریافت نکردند
-                          </div>
-                          <div class="fw-500 text-dark">30%</div>
-                        </div>
-                        <div class="list-group-item d-flex align-items-center justify-content-between small">
-                          <div class="me-3">
-                            <i class="bx bx-circle me-1 text-teal"></i>
-                             دریافت کردند
-                          </div>
-                          <div class="fw-500 text-dark">70%</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-xxl-4">
-              <div class="row">
-                <div class="col-xl-6 col-xxl-12">
-                  <!-- Team members / people dashboard card example-->
-                  <div class="card mb-4">
-                    <div class="card-header">کاربران</div>
-                    <div class="card-body">
-                      <!-- Item 2-->
-                      <div class="d-flex align-items-center justify-content-between mb-4">
-                        <div class="d-flex align-items-center flex-shrink-0 me-3">
-                          <div class="avatar avatar-xl me-3 bg-gray-200"><img class="avatar-img img-fluid" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSNhLxHFzDMn1WRPkqjD4CNniQp0P9igWBMC7-8fUo2Z5KX_Il35EmsaA&s=10" alt=""></div>
-                          <div class="d-flex flex-column fw-bold">
-                            <a class="text-dark line-height-normal mb-1" href="#!">مصطفی سلطان محمدی</a>
-                            <div class="small text-muted line-height-normal">مدیر نذورات</div>
-                          </div>
-                        </div>
-                        <div class="dropdown no-caret">
-                          <!-- <button class="btn btn-transparent-dark btn-icon dropdown-toggle" id="dropdownPeople2" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="bx bx-dots-vertical"></i></button> -->
-                          <div class="dropdown-menu dropdown-menu-end animated--fade-in-up" aria-labelledby="dropdownPeople2">
-                            <a class="dropdown-item" href="#!">حذف</a>
-                            <a class="dropdown-item" href="#!">ویرایش</a>
-                            <a class="dropdown-item" href="#!">پروفایل</a>
-                          </div>
-                        </div>
-                      </div>
-                      <!-- Item 3-->
-                      <div class="d-flex align-items-center justify-content-between mb-4">
-                        <div class="d-flex align-items-center flex-shrink-0 me-3">
-                          <div class="avatar avatar-xl me-3 bg-gray-200"><img class="avatar-img img-fluid" src="1.jpg" alt=""></div>
-                          <div class="d-flex flex-column fw-bold">
-                            <a class="text-dark line-height-normal mb-1" href="#!">طاها سلطانی</a>
-                            <div class="small text-muted line-height-normal">برنامه نویس و ادمین</div>
-                          </div>
-                        </div>
-                        <div class="dropdown no-caret">
-                          <!-- <button class="btn btn-transparent-dark btn-icon dropdown-toggle" id="dropdownPeople3" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="bx bx-dots-vertical"></i></button> -->
-                          <div class="dropdown-menu dropdown-menu-end animated--fade-in-up" aria-labelledby="dropdownPeople3">
-                            <a class="dropdown-item" href="#!">حذف</a>
-                            <a class="dropdown-item" href="#!">ویرایش</a>
-                            <a class="dropdown-item" href="#!">پروفایل</a>
-                          </div>
-                        </div>
-                      </div>
-                      <!-- Item 4-->
-                      <div class="d-flex align-items-center justify-content-between mb-4">
-                        <div class="d-flex align-items-center flex-shrink-0 me-3">
-                          <div class="avatar avatar-xl me-3 bg-gray-200"><img class="avatar-img img-fluid" src="2.jpg" alt=""></div>
-                          <div class="d-flex flex-column fw-bold">
-                            <a class="text-dark line-height-normal mb-1" href="#!">سید کاظم شکرآبی</a>
-                            <div class="small text-muted line-height-normal">دفتر اشیاء پیداشده</div>
-                          </div>
-                        </div>
-                        <div class="dropdown no-caret">
-                          <!-- <button class="btn btn-transparent-dark btn-icon dropdown-toggle" id="dropdownPeople4" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="bx bx-dots-vertical"></i></button> -->
-                          <div class="dropdown-menu dropdown-menu-end animated--fade-in-up" aria-labelledby="dropdownPeople4">
-                            <a class="dropdown-item" href="#!">حذف</a>
-                            <a class="dropdown-item" href="#!">ویرایش</a>
-                            <a class="dropdown-item" href="#!">پروفایل</a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-            
-          
-      </main>
-      <footer class="footer-admin mt-auto footer-light is-rtl">
-        <div class="container-xl px-4">
-          <div class="row">
-            <div class="col-md-6 small">طراحی شده توسط نذورات حرم حضرت عبدالعظیم حسنی</div>
-            <div class="col-md-6 text-md-end small">
-            </div>
-          </div>
-        </div>
-      </footer>
-    </div>
-  </div>
-
-  <script src="bootstrap.bundle.min.js" ></script>
-  <script src="scripts.js"></script>
-
-  <!-- chartsJs -->
-  <script src="Chart.min.js" ></script>
-  <script src="chart-area.js" ></script>
-  <script src="chart-pie.js" ></script>
-
-
-
-  <script src="simple-datatables%40latest.js"></script>
-  <script src="simple-datatables%40demo.js"></script>
-
-  </body>
-
-<!-- Mirrored from joohar.ir/sadminV1/dashboard-multi.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 27 Feb 2025 10:02:52 GMT -->
+</body>
 </html>
