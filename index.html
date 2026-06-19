@@ -1,358 +1,406 @@
-
 <!-- هوالحبیب -->
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>نذورات حرم حضرت عبدالعظیم حسنی</title>
-  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&family=Lalezar&display=swap" rel="stylesheet">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-   <link rel="stylesheet" href="style.css">
-</head>
-<body class="dark">
-  <img src="https://s3.picofile.com/file/7992473331/_babol2011_blogfa_com_5.gif" alt="My Icon" id="fixed-icon">
-  <main class="app-shell">
-    <div class="app-frame">
+<html lang="fa">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>سامانه مدریتی نذورات حرم حضرت عبدالعظیم حسنی</title>
+    <!-- <link rel="stylesheet" href="assets/css/fonts.css">
+    <link rel="stylesheet" href="assets/css/boxicons.css"> -->
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body class="nav-fixed">
 
-      <header class="topbar">
-        <div class="topbar-logo">
-          <!-- <img src="https://nozorat.abdulazim.com/sites/all/themes/nozooratthemes/logo.png" alt="لوگو"> -->
-        </div>
-        <div class="topbar-title">
-          <h1>نذورات</h1>
-          <p>حرم حضرت عبدالعظیم حسنی</p>
-        </div>
-        <div class="topbar-actions">
-          <button class="icon-btn" id="themeToggle" aria-label="تغییر تم">🌙</button>
-        </div>
-      </header>
-
-      <section class="search">
-        <div class="search-box">
-          <span>🔎</span>
-          <input type="text" placeholder="جستجو در نذورات...">
-        </div>
-      </section>
-
-      <div class="announcement-bar" id="announcementBar">
-        <div>📢 اطلاعیه مهم: ثبت نذورات و مشارکت‌های جدید از طریق همین صفحه فعال شده است.</div>
-        <button class="announcement-close" type="button" aria-label="بستن اطلاعیه">×</button>
+  <nav class="is-rtl topnav navbar navbar-expand shadow justify-content-between justify-content-sm-start navbar-light bg-white" id="snavAccordion">
+    <button class="btn btn-icon btn-transparent-dark order-1 order-lg-0 me-2 ms-lg-2 me-lg-0" id="sidebarToggle">
+      <i class="bx bx-menu bx-sm"></i>
+    </button>
+    <a class="navbar-brand pe-3 ps-4 ps-lg-2" href="index.html">نذورات</a>
+    <form class="form-inline me-auto d-none d-lg-block me-3">
+      <div class="input-group input-group-joined input-group-solid">
+        <input class="form-control pe-0" type="search" placeholder="جستجو ..." aria-label="جستجو">
+        <div class="input-group-text"><i class="bx bx-search bx-sm"></i></div>
       </div>
+    </form>
 
-      <section class="hero">
-        <h2>خوش آمدید 👋</h2>
-        <p>جهت مشاهده اخبار به‌روز مجموعه نذورات و خدمات الکترونیکی، از طریق لینک زیر اقدام نمایید.</p>
-        <div style="margin-top:18px; position: relative; z-index: 1;">
-          <a href="#services" class="btn primary">مشاهده خدمات</a>
+    <!-- Navbar Items-->
+    <ul class="navbar-nav align-items-center ms-auto">
+
+      <!-- Navbar Search Dropdown-->
+      <!-- * * Note: * * Visible only below the lg breakpoint-->
+      <li class="nav-item dropdown no-caret me-3 d-lg-none">
+        <a class="btn btn-icon btn-transparent-dark dropdown-toggle" id="searchDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="bx bx-search bx-sm"></i>
+        </a>
+        <!-- Dropdown - Search-->
+        <div class="dropdown-menu dropdown-menu-end p-3 shadow animated--fade-in-up" aria-labelledby="searchDropdown">
+          <form class="form-inline me-auto w-100">
+            <div class="input-group input-group-joined input-group-solid">
+              <input class="form-control pe-0" type="text" placeholder="جستجو ..." aria-label="Search" aria-describedby="basic-addon2">
+              <div class="input-group-text"><i class="bx bx-search"></i></div>
+            </div>
+          </form>
         </div>
-      </section>
+      </li>
 
-    <section class="section" id="services">
-  <div class="section-header">
-    <h3>خدمات نذورات</h3>
-    <a href="#">همه</a>
+      <!-- Alerts Dropdown-->
+      <li class="nav-item dropdown no-caret d-none d-sm-block me-3 bdr-notify">
+        <a class="btn btn-icon btn-transparent-dark dropdown-toggle" id="navbarDropdownAlerts" href="javascript:void(0);" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="bx bx-bell bx-sm"></i>
+        </a>
+        <div class="dropdown-menu dropdown-menu-end border-0 shadow animated--fade-in-up" aria-labelledby="navbarDropdownAlerts">
+          <h6 class="dropdown-header bdr-notify-header">
+            <i class="bx bx-bell me-2"></i>
+            اعلان‌ها
+          </h6>
+          <div class="dropdown-div">
+
+            <!-- اعلان 1-->
+            <a class="dropdown-item bdr-notify-item" href="#">
+              <div class="bdr-notify-item-icon bg-warning"><i class="bx bx-wallet"></i></div>
+              <div class="bdr-notify-item-content">
+                <p>ثبت اشیاء گمشده کارت ملی</p>
+                <small class="text-muted">جدید امروز</small>
+              </div>
+            </a>
+            <!-- اعلان 2-->
+            <a class="dropdown-item bdr-notify-item" href="#">
+              <div class="bdr-notify-item-icon bg-info"><i class="bx bx-wallet"></i></div>
+              <div class="bdr-notify-item-content">
+                <p>راه اندازی سامانه مدریتی نذورات</p>
+                <small class="text-muted">قدیم</small>
+              </div>
+            </a>
+          </div>
+          <a class="dropdown-item bdr-notify-footer" href="#">مشاهده همه اعلان ها</a>
+        </div>
+      </li>
+
+      
+    </ul>
+  </nav>
+  <div id="layoutSidenav">
+    <div id="layoutSidenav_nav">
+      <nav class="snav shadow-right snav-light">
+        <div class="snav-menu">
+          <div class="nav accordion" id="accordionSidenav">
+
+
+            <div class="snav-menu-heading d-sm-none">حساب کاربری</div>
+
+            <!-- اعلان ها -->
+            <a class="nav-link d-sm-none" href="#">
+              <div class="nav-link-icon"><i class="bx bx-bell "></i></div>
+              اعلان ها
+              <span class="badge bg-warning-soft text-warning ms-auto">4 جدید!</span>
+            </a>
+
+            <!-- پیام ها -->
+            <a class="nav-link d-sm-none" href="#">
+              <div class="nav-link-icon"><i class="bx bx-envelope"></i></div>
+              پیام ها
+              <span class="badge bg-success-soft text-success ms-auto">2 جدید!</span>
+            </a>
+            
+
+            <div class="snav-menu-heading">هسته</div>
+
+            <!-- پیشخوان -->
+            <a class="nav-link collapsed active" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseDashboards" aria-expanded="false" aria-controls="collapseDashboards">
+              <div class="nav-link-icon"><i class="bx bx-pulse"></i></div>
+              داشبورد
+              <div class="snav-collapse-arrow"><i class="bx bx-chevron-down"></i></div>
+            </a>
+            <div class="collapse" id="collapseDashboards" data-bs-parent="#accordionSidenav">
+              <nav class="snav-menu-nested nav accordion" id="accordionSidenavPages">
+                <a class="nav-link active" href="index.html">پنل مدریتی روز</a>
+                <a class="nav-link" href="index2.html">پنل مدریت آمار</a>
+              </nav>
+            </div>
+
+
+
+            <div class="snav-menu-heading">فعالیت های نذورات</div>
+            <!-- برگه ها -->
+            <a class="nav-link collapsed pt-0" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+              <div class="nav-link-icon"><i class="bx bx-grid"></i></div>
+              برگه ها
+              <div class="snav-collapse-arrow"><i class="bx bx-chevron-down"></i></div>
+            </a>
+            <div class="collapse" id="collapsePages" data-bs-parent="#accordionSidenav">
+
+
+              <nav class="snav-menu-nested nav accordion" id="accordionSidenavPagesMenu">
+
+               <!-- فاکتور -->
+                <a class="nav-link" href="index3.html">اشیاء پیدا شده</a>
+                   
+                  </nav>
+                </div>
+      </nav>
+    </div>
+    <div id="layoutSidenav_content">
+
+      <main class="is-rtl">
+        <header class="page-header page-header-dark bg-gradient-primary-to-secondary pb-10">
+          <div class="container-xl px-4">
+            <div class="page-header-content pt-4">
+              <div class="row align-items-center justify-content-between">
+                <div class="col-auto mt-4">
+                  <h1 class="page-header-title">
+                    <!-- <div class="page-header-icon"><i class="bx bx-pulse"></i></div> -->
+                    داشبورد مدریتی نذورات حرم حضرت عبدالعظیم حسنی
+                  </h1>
+                  <div class="page-header-subtitle">نذورات حرم حضرت عبدالعظیم حسنی</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+        <!-- Main page content -->
+        <div class="container-xl px-4 mt-n10">
+          <div class="row">
+            <div class="col-xl-4 mb-4">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xxl-8">
+              <!-- Tabbed dashboard card example-->
+              <div class="card mb-4">
+                <div class="card-header border-bottom">
+                  <!-- Dashboard card navigation-->
+                  <ul class="nav nav-tabs card-header-tabs" id="dashboardNav" role="tablist">
+                    <li class="nav-item me-1"><a class="nav-link active" id="overview-pill" href="#overview" data-bs-toggle="tab" role="tab" aria-controls="overview" aria-selected="true">نذورات پرداختی</a></li>
+                    <li class="nav-item"><a class="nav-link" id="activities-pill" href="#activities" data-bs-toggle="tab" role="tab" aria-controls="activities" aria-selected="false">جزئیات</a></li>
+                  </ul>
+                </div>
+                <div class="card-body">
+                  <div class="tab-content" id="dashboardNavContent">
+                    <!-- Dashboard Tab Pane 1-->
+                    <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview-pill">
+                      <div class="chart-area mb-4 mb-lg-0" style="height: 20rem"><canvas id="myAreaChart" width="100%" height="30"></canvas></div>
+                    </div>
+                    <!-- Dashboard Tab Pane 2-->
+                    <div class="tab-pane fade" id="activities" role="tabpanel" aria-labelledby="activities-pill">
+                      <table id="datatablesSimple">
+                        <thead>
+                        <tr>
+                          <th>تاریخ</th>
+                          <th>رویداد</th>
+                          <th>زمان</th>
+                        </tr>
+                        </thead>
+                        <tfoot>
+                        <tr>
+                          <th>تاریخ</th>
+                          <th>رویداد</th>
+                          <th>زمان</th>
+                        </tr>
+                        </tfoot>
+                        <tbody>
+                        <tr>
+                          <td>405/03/29</td>
+                          <td>
+                            <i class="me-2 text-green" data-feather="zap"></i>
+                            طاها سلطانی 25 ملیون نذورات قربانی
+                          </td>
+                          <td>1:21 ق.ب</td>
+                        </tr>
+                        <tr>
+                          <td>405/03/28</td>
+                          <td>
+                            <i class="me-2 text-red" data-feather="zap-off"></i>
+                           راه اندازی سامانه مدریتی نذورات
+                          </td>
+                          <td>1:00 ق.ب</td>
+                        </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <!-- Dashboard activity timeline example-->
+                <div class="col-xl-6 mb-4">
+                  <div class="card card-header-actions h-100">
+                    <div class="card-header">
+                      آخرین فعالیت
+                      <div class="dropdown no-caret">
+                        <button class="btn btn-transparent-dark btn-icon dropdown-toggle" id="dropdownMenuButton" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical text-gray-500"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg></button>
+                        <div class="dropdown-menu dropdown-menu-end animated--fade-in-up" aria-labelledby="dropdownMenuButton">
+                          <h6 class="dropdown-header">فیلتر فعالیت:</h6>
+                          <a class="dropdown-item" href="#!"><span class="badge bg-green-soft text-green my-1">غذای حضرتی</span></a>
+                          <a class="dropdown-item" href="#!"><span class="badge bg-blue-soft text-blue my-1">اشیائ پیدا شده</span></a>
+                          <a class="dropdown-item" href="#!"><span class="badge bg-yellow-soft text-yellow my-1">نذورات</span></a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <div class="timeline timeline-xs">
+                        <!-- Timeline Item 1-->
+                        <div class="timeline-item">
+                          <div class="timeline-item-marker">
+                            <div class="timeline-item-marker-text">امروز</div>
+                            <div class="timeline-item-marker-indicator bg-green"></div>
+                          </div>
+                          <div class="timeline-item-content">
+                            امروز 250 عدد غذا حضرتی وعده ناهار
+                            <a class="fw-bold text-dark" href="#!">(لیست آماری غذای حضرتی)</a>
+                            با موفقیت ثبت شده است.
+                          </div>
+                        </div>
+                        <!-- Timeline Item 2-->
+                        <div class="timeline-item">
+                          <div class="timeline-item-marker">
+                            <div class="timeline-item-marker-text">دیروز</div>
+                            <div class="timeline-item-marker-indicator bg-blue"></div>
+                          </div>
+                          <div class="timeline-item-content">
+                            ثبت یک عدد مفقودی
+                            <a class="fw-bold text-dark" href="#!">(جزئیات)</a>
+                           با موفقیت ثبت شد
+                          </div>
+                        </div>
+                         <!-- Timeline Item 2-->
+                        <div class="timeline-item">
+                          <div class="timeline-item-marker">
+                            <div class="timeline-item-marker-text">امروز</div>
+                            <div class="timeline-item-marker-indicator bg-orange"></div>
+                          </div>
+                          <div class="timeline-item-content">
+                            دو ملیون سیصد هزارتومان
+                            <a class="fw-bold text-dark" href="#!">(جزئیات)</a>
+                           با موفقیت ثبت شد
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Pie chart with legend example-->
+                <div class="col-xl-6 mb-4">
+
+                  <div class="card h-100">
+                    <div class="card-header">غذای حضرتی امروز</div>
+                    <div class="card-body">
+                      <div class="chart-pie mb-4"><canvas id="myPieChart" width="100%" height="50"></canvas></div>
+                      <div class="list-group list-group-flush">
+                        <div class="list-group-item d-flex align-items-center justify-content-between small">
+                    
+                          <div class="me-3">
+                            <i class="bx bx-circle me-1 text-orange"></i>
+                             دریافت نکردند
+                          </div>
+                          <div class="fw-500 text-dark">30%</div>
+                        </div>
+                        <div class="list-group-item d-flex align-items-center justify-content-between small">
+                          <div class="me-3">
+                            <i class="bx bx-circle me-1 text-teal"></i>
+                             دریافت کردند
+                          </div>
+                          <div class="fw-500 text-dark">70%</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xxl-4">
+              <div class="row">
+                <div class="col-xl-6 col-xxl-12">
+                  <!-- Team members / people dashboard card example-->
+                  <div class="card mb-4">
+                    <div class="card-header">کاربران</div>
+                    <div class="card-body">
+                      <!-- Item 2-->
+                      <div class="d-flex align-items-center justify-content-between mb-4">
+                        <div class="d-flex align-items-center flex-shrink-0 me-3">
+                          <div class="avatar avatar-xl me-3 bg-gray-200"><img class="avatar-img img-fluid" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSNhLxHFzDMn1WRPkqjD4CNniQp0P9igWBMC7-8fUo2Z5KX_Il35EmsaA&s=10" alt=""></div>
+                          <div class="d-flex flex-column fw-bold">
+                            <a class="text-dark line-height-normal mb-1" href="#!">مصطفی سلطان محمدی</a>
+                            <div class="small text-muted line-height-normal">مدیر نذورات</div>
+                          </div>
+                        </div>
+                        <div class="dropdown no-caret">
+                          <!-- <button class="btn btn-transparent-dark btn-icon dropdown-toggle" id="dropdownPeople2" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="bx bx-dots-vertical"></i></button> -->
+                          <div class="dropdown-menu dropdown-menu-end animated--fade-in-up" aria-labelledby="dropdownPeople2">
+                            <a class="dropdown-item" href="#!">حذف</a>
+                            <a class="dropdown-item" href="#!">ویرایش</a>
+                            <a class="dropdown-item" href="#!">پروفایل</a>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Item 3-->
+                      <div class="d-flex align-items-center justify-content-between mb-4">
+                        <div class="d-flex align-items-center flex-shrink-0 me-3">
+                          <div class="avatar avatar-xl me-3 bg-gray-200"><img class="avatar-img img-fluid" src="1.jpg" alt=""></div>
+                          <div class="d-flex flex-column fw-bold">
+                            <a class="text-dark line-height-normal mb-1" href="#!">طاها سلطانی</a>
+                            <div class="small text-muted line-height-normal">برنامه نویس و ادمین</div>
+                          </div>
+                        </div>
+                        <div class="dropdown no-caret">
+                          <!-- <button class="btn btn-transparent-dark btn-icon dropdown-toggle" id="dropdownPeople3" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="bx bx-dots-vertical"></i></button> -->
+                          <div class="dropdown-menu dropdown-menu-end animated--fade-in-up" aria-labelledby="dropdownPeople3">
+                            <a class="dropdown-item" href="#!">حذف</a>
+                            <a class="dropdown-item" href="#!">ویرایش</a>
+                            <a class="dropdown-item" href="#!">پروفایل</a>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Item 4-->
+                      <div class="d-flex align-items-center justify-content-between mb-4">
+                        <div class="d-flex align-items-center flex-shrink-0 me-3">
+                          <div class="avatar avatar-xl me-3 bg-gray-200"><img class="avatar-img img-fluid" src="2.jpg" alt=""></div>
+                          <div class="d-flex flex-column fw-bold">
+                            <a class="text-dark line-height-normal mb-1" href="#!">سید کاظم شکرآبی</a>
+                            <div class="small text-muted line-height-normal">دفتر اشیاء پیداشده</div>
+                          </div>
+                        </div>
+                        <div class="dropdown no-caret">
+                          <!-- <button class="btn btn-transparent-dark btn-icon dropdown-toggle" id="dropdownPeople4" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="bx bx-dots-vertical"></i></button> -->
+                          <div class="dropdown-menu dropdown-menu-end animated--fade-in-up" aria-labelledby="dropdownPeople4">
+                            <a class="dropdown-item" href="#!">حذف</a>
+                            <a class="dropdown-item" href="#!">ویرایش</a>
+                            <a class="dropdown-item" href="#!">پروفایل</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            
+          
+      </main>
+      <footer class="footer-admin mt-auto footer-light is-rtl">
+        <div class="container-xl px-4">
+          <div class="row">
+            <div class="col-md-6 small">طراحی شده توسط نذورات حرم حضرت عبدالعظیم حسنی</div>
+            <div class="col-md-6 text-md-end small">
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
   </div>
 
-  <div class="grid">
-    <article class="card" style="animation: changeBackgroundColor 15s infinite;">
-      <div class="card-icon" style="animation: changeBackgroundColor 15s infinite;">
-        <i class="fas fa-utensils" style="font-size:32px; color: #DAB844;"></i> <!-- آیکون غذا -->
-      </div>
-      <div class="card-content" style="animation: changeBackgroundColor 15s infinite;">
-        <h4 style="color: white;">غذای حضرتی</h4>
-        <p style="color: rgb(213, 213, 213);">جهت شرکت در قرعه‌کشی روزانه غذای حضرتی وارد شوید</p>
-      </div>
-      <div class="card-badge">غذا</div>
-    </article>
+  <script src="bootstrap.bundle.min.js" ></script>
+  <script src="scripts.js"></script>
 
-    <article class="card" style="animation: changeBackgroundColor 15s infinite;">
-      <div class="card-icon" style="animation: changeBackgroundColor 15s infinite;">
-        <i class="fas fa-suitcase" style="font-size:32px; color: #DAB844;"></i> <!-- آیکون اشیاء گمشده -->
-      </div>
-      <div class="card-content" style="animation: changeBackgroundColor 15s infinite;">
-        <h4 style="color: white;">اشیاء گمشده</h4>
-        <p style="color: rgb(213, 213, 213);">جهت ثبت مشخصات وسیله گمشده وارد شوید</p>
-      </div>
-      <div class="card-badge">گمشده</div>
-    </article>
-
-    <article class="card" style="animation: changeBackgroundColor 15s infinite;">
-      <div class="card-icon" style="animation: changeBackgroundColor 15s infinite;">
-        <i class="fas fa-paw" style="font-size:32px; color: #DAB844;"></i> <!-- آیکون عقیقه (حیوان) -->
-      </div>
-      <div class="card-content" style="animation: changeBackgroundColor 15s infinite;">
-        <h4 style="color: white;">عقیقه</h4>
-        <p style="color: rgb(213, 213, 213);">جهت پرداخت نذورات عقیقه خود وارد شوید</p>
-      </div>
-      <div class="card-badge">عقیقه</div>
-    </article>
-
-    <article class="card" style="animation: changeBackgroundColor 15s infinite;">
-      <div class="card-icon" style="animation: changeBackgroundColor 15s infinite;">
-        <i class="fas fa-mosque" style="font-size:32px; color: #DAB844;"></i> <!-- آیکون قربانی/مسجد -->
-      </div>
-      <div class="card-content" style="animation: changeBackgroundColor 15s infinite;">
-        <h4 style="color: white;">قربانی</h4>
-        <p style="color: rgb(213, 213, 213);">جهت پرداخت نذورات قربانی خود وارد شوید</p>
-      </div>
-      <div class="card-badge">قربانی</div>
-    </article>
-
-    <article class="card" style="animation: changeBackgroundColor 15s infinite;">
-      <div class="card-icon" style="animation: changeBackgroundColor 15s infinite;">
-        <i class="fas fa-gem" style="font-size:32px; color: #DAB844;"></i> <!-- آیکون ضریح (الماس/جواهر) -->
-      </div>
-      <div class="card-content" style="animation: changeBackgroundColor 15s infinite;">
-        <h4 style="color: white;">ساخت ضریح حرم</h4>
-        <p style="color: rgb(213, 213, 213);">جهت مشارکت در ساخت ضریح مطهر وارد شوید</p>
-      </div>
-      <div class="card-badge">ضریح</div>
-    </article>
-
-    <article class="card" style="animation: changeBackgroundColor 15s infinite;">
-      <div class="card-icon" style="animation: changeBackgroundColor 15s infinite;">
-        <i class="fas fa-scroll" style="font-size:32px; color: #DAB844;"></i> <!-- آیکون وجوه شرعی -->
-      </div>
-      <div class="card-content" style="animation: changeBackgroundColor 15s infinite;">
-        <h4 style="color: white;">وجوه شرعی</h4>
-        <p style="color: rgb(213, 213, 213);">جهت پرداخت وجوهات شرعی خود وارد شوید</p>
-      </div>
-      <div class="card-badge">شرعی</div>
-    </article>
-  </div>
-</section>
-
-<!-- 
-نکته مهم: برای اینکه آیکون‌های Font Awesome نمایش داده شوند، باید لینک CSS مربوط به Font Awesome را به بخش <head> فایل HTML خود اضافه کنید. مثال:
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
--->
-
-<section id="live-streaming" class="section-padding centered-live-section">
-  <div class="container-custom"> <!-- یک کلاس دلخواه برای کانتینر -->
-    <div class="section-header text-center">
-      <h2>پخش زنده</h2>
-    </div>
-    <div class="row-custom"> <!-- یک کلاس دلخواه برای ردیف -->
-      <div class="col-custom"> <!-- یک کلاس دلخواه برای ستون -->
-        <div class="live-stream-card">
-          <div class="live-stream-thumbnail">
-            <img src="https://ana.ir/c-files/old/1399/02/15/637242150017422596.jpg" alt="پخش زنده حرم حضرت عبدالعظیم">
-            <span class="live-badge">زنده</span>
-          </div>
-          <div class="live-stream-content">
-            <h3>پخش زنده حرم حضرت عبدالعظیم حسنی</h3>
-            <p>پوشش تصویری مستقیم از صحن و رواق‌ها</p>
-            <a href="https://your-streaming-url.com/abdulazim" class="btn btn-primary" target="_blank">مشاهده زنده</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="live-streaming" class="section-padding">
-  <div class="container">
-    <div class="section-header text-center">
-      <h2>تصاویر</h2>
-    </div>
-    <div class="row">
-      <!-- پخش زنده اول -->
-      <div class="col-lg-4">
-        <div class="live-stream-card">
-          <div class="live-stream-thumbnail">
-            <img src="https://nozorat.abdulazim.com/sites/nozoorat.com/files/u23/IMG_023902.jpg" alt="پخش زنده حرم حضرت عبدالعظیم">
-            <span class="media-badge">عکس</span>
-          </div>
-          <div class="live-stream-content">
-            <h3>عکس شماره یک</h3>
-            <p>توضیحات عکس شماره یک</p>
-            <a href="https://your-streaming-url.com/abdulazim" class="btn btn-primary" target="_blank" style="background: #12524E; color: white;">مشاهده</a>
-          </div>
-        </div>
-      </div>
-      <!-- پخش زنده دوم -->
-      <div class="col-lg-4">
-        <div class="live-stream-card">
-          <div class="live-stream-thumbnail">
-            <img src="https://nozorat.abdulazim.com/sites/nozoorat.com/files/u23/photo_2023-04-11_14-35-26.jpg" alt="پخش زنده حرم حضرت عبدالعظیم">
-            <span class="media-badge">عکس</span>
-          </div>
-          <div class="live-stream-content">
-            <h3>عکس شماره دو</h3>
-            <p>توضیحات عکس شماره دو</p>
-            <a href="https://your-streaming-url.com/abdulazim" class="btn btn-primary" target="_blank" style="background: #12524E; color: white;">مشاهده</a>
-          </div>
-        </div>
-      </div>
-      <!-- پخش زنده سوم -->
-      <div class="col-lg-4">
-        <div class="live-stream-card">
-          <div class="live-stream-thumbnail">
-            <img src="https://nozorat.abdulazim.com/sites/nozoorat.com/files/u23/photo_2023-04-11_14-34-43.jpg" alt="پخش زنده حرم حضرت عبدالعظیم">
-            <span class="media-badge">عکس</span>
-          </div>
-          <div class="live-stream-content">
-            <h3>عکس شماره سه</h3>
-            <p>توضیحات عکس شماره سه</p>
-            <a href="https://your-streaming-url.com/abdulazim" class="btn btn-primary" target="_blank" style="background: #12524E; color: white;">مشاهده</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-      <!-- ویدیو -->
-      <section id="videos" class="section-padding">
-        <div class="section-header">
-          <div>
-            <h2>ویدیوها</h2>
-          </div>
-        </div>
-
-        <div class="grid">
-          <article class="media-card">
-            <div class="media-thumb">
-              <iframe class="video-frame" src="https://nozorat.abdulazim.com/sites/nozoorat.com/files/videos/original/18089-Vid%2020240310%20164249_0.mp4" title="ویدیو 3" allowfullscreen></iframe>
-              <span class="media-badge">ویدیو</span>
-            </div>
-            <div class="media-content">
-              <h4>ویدیو سوم</h4>
-              <p>ویدیو نمونه برای معرفی محتوای سوم</p>
-              <a href="https://your-streaming-url.com/abdulazim" class="btn btn-primary" target="_blank">مشاهده</a>
-            </div>
-          </article>
-                   <article class="media-card">
-            <div class="media-thumb">
-              <iframe class="video-frame" src="https://nozorat.abdulazim.com/sites/nozoorat.com/files/videos/original/18089-Vid%2020240310%20164249_0.mp4" title="ویدیو 3" allowfullscreen></iframe>
-              <span class="media-badge">ویدیو</span>
-            </div>
-            <div class="media-content">
-              <h4>ویدیو سوم</h4>
-              <p>ویدیو نمونه برای معرفی محتوای سوم</p>
-              <a href="https://your-streaming-url.com/abdulazim" class="btn btn-primary" target="_blank">مشاهده</a>
-            </div>
-          </article>
-                   <article class="media-card">
-            <div class="media-thumb">
-              <iframe class="video-frame" src="https://nozorat.abdulazim.com/sites/nozoorat.com/files/videos/original/18089-Vid%2020240310%20164249_0.mp4" title="ویدیو 3" allowfullscreen></iframe>
-              <span class="media-badge">ویدیو</span>
-            </div>
-            <div class="media-content">
-              <h4>ویدیو سوم</h4>
-              <p>ویدیو نمونه برای معرفی محتوای سوم</p>
-              <a href="https://your-streaming-url.com/abdulazim" class="btn btn-primary" target="_blank">مشاهده</a>
-            </div>
-          </article>
-        </div>
-      </section>
-
-    </div>
-  </main>
-
-<nav class="bottom-nav">
-<div class="bottom-nav-inner">
-<a class="nav-item active" href="index.html">
-<div class="nav-icon">
-<i class="fas fa-home"></i>
-</div>
-<span>
-خانه
-</span>
-</a>
-<a class="nav-item" href="index2.html">
-<div class="nav-icon">
-<i class="fas fa-images"></i>
-</div>
-<span>
-نگارخانه
-</span>
-</a>
-<a class="nav-item" href="index3.html">
-<div class="nav-icon">
-<i class="fas fa-book"></i>
-</div>
-<span>
-مقالات
-</span>
-</a>
-<a class="nav-item" href="contact.html">
-<div class="nav-icon">
-<i class="fas fa-phone"></i>
-</div>
-<span>
-تماس
-</span>
-</a>
-</div>
-</nav>
+  <!-- chartsJs -->
+  <script src="Chart.min.js" ></script>
+  <script src="chart-area.js" ></script>
+  <script src="chart-pie.js" ></script>
 
 
-  <script>
-    const body = document.body;
-    const toggleBtn = document.getElementById('themeToggle');
-    const announcementBar = document.getElementById('announcementBar');
-    const closeAnnouncementBtn = announcementBar?.querySelector('.announcement-close');
 
-    const savedTheme = localStorage.getItem('theme');
-    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  <script src="simple-datatables%40latest.js"></script>
+  <script src="simple-datatables%40demo.js"></script>
 
-    function applyTheme(theme) {
-      if (theme === 'dark' || (!savedTheme && systemPrefersDark && theme !== 'light')) {
-        body.classList.add('dark');
-        toggleBtn.textContent = '☀️';
-      } else {
-        body.classList.remove('dark');
-        toggleBtn.textContent = '🌙';
-      }
-      localStorage.setItem('theme', theme);
-    }
+  </body>
 
-    toggleBtn.addEventListener('click', () => {
-      const currentTheme = body.classList.contains('dark') ? 'dark' : 'light';
-      applyTheme(currentTheme === 'dark' ? 'light' : 'dark');
-    });
-
-    applyTheme(savedTheme || (systemPrefersDark ? 'dark' : 'light'));
-
-    if (closeAnnouncementBtn) {
-      closeAnnouncementBtn.addEventListener('click', () => {
-        announcementBar.style.display = 'none';
-      });
-    }
-
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-          targetElement.scrollIntoView({ behavior: 'smooth' });
-        }
-      });
-    });
-
-    const sections = document.querySelectorAll("section[id]");
-    window.addEventListener("scroll", navHighlighter);
-
-    function navHighlighter() {
-      let scrollY = window.pageYOffset;
-      sections.forEach(current => {
-        const sectionHeight = current.offsetHeight;
-        const sectionTop = (current.getBoundingClientRect().top + window.pageYOffset) - 50;
-        const sectionId = current.getAttribute("id");
-
-        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-          document.querySelectorAll('.bottom-nav-inner .nav-item').forEach(item => item.classList.remove('active'));
-          if (sectionId === "services") {
-            document.querySelector(".bottom-nav-inner .nav-item:nth-child(1)")?.classList.add('active');
-          }
-        }
-      });
-    }
-  </script>
-
-</body>
+<!-- Mirrored from joohar.ir/sadminV1/dashboard-multi.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 27 Feb 2025 10:02:52 GMT -->
 </html>
-<!-- طاها سلطانی -->
