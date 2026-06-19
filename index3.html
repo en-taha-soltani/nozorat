@@ -196,6 +196,11 @@
 
   <script src="simple-datatables%40latest.js"></script>
   <script src="simple-datatables%40demo.js"></script>
+        <script>
+  if (sessionStorage.getItem("auth") !== "true") {
+    window.location.href = "index.html";
+  }
+</script>
   </body>
 
 <!-- Mirrored from joohar.ir/sadminV1/pages/tables.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 27 Feb 2025 10:03:09 GMT -->
